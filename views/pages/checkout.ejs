@@ -1,0 +1,52 @@
+<%include ../partials/head.ejs%>
+
+<p>This is for androind Checkout implementation</p>
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="merchantAccount">Merchant Account</label>
+      <input type="text" class="form-control" id="merchantAccount" placeholder="merchantAccount">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Merchant Reference</label>
+      <input type="text" class="form-control" id="merchantreference" placeholder="merchant Reference">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Shopper Reference</label>
+      <input type="text" class="form-control" id="shopperReference" placeholder="Shopper Reference">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Billing Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Shipping Address</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Amount</label>
+      <input type="text" class="form-control" id="amount">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Currency</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>EUR</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Store the Payment details
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Send request to PaymentSession</button>
+</form>
+<%include ../partials/footer.ejs%>
