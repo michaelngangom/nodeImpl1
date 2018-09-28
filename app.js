@@ -1,6 +1,36 @@
 var express = require('express');
 var app=express();
 let ejs = require('ejs');
+var request = require('request');
+
+var options = { method: 'POST',
+  url: 'https://checkout-test.adyen.com/v37/paymentSession',
+  headers: 
+   { 'Postman-Token': '53830841-9521-4eee-8707-6b18a5cad8bb',
+     'Cache-Control': 'no-cache',
+     'X-Api-Key': '',
+     'Content-Type': 'application/json' },
+  body: 
+   { amount: { currency: 'EUR', value: 17408 },
+     reference: 'Your order number',
+     shopperReference: 'yourShopperId_IOfW3k9G2PvXFu2j',
+     channel: 'Web',
+     html: true,
+     origin: 'http://localhost:8080',
+     returnUrl: 'https://www.yourshop.com/checkout/result',
+     countryCode: 'NL',
+     shopperLocale: 'nl_NL',
+     merchantAccount: 'MichaelNgangom',
+     sdkVersion: '1.3.0' },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log();
+});
+
+
 
 app.set('view engine','ejs');
 
